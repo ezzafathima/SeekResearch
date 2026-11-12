@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SeekResearch — Verified Top 30 Global Faculty · Science, Commerce, Design & Humanities</title>
+  <meta name="description" content="Navigating your research journey across Sciences, Commerce, Design, and Humanities with verified faculty from the Top 30 World Universities and authentic cold outreach.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238b141c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='34' fill='%23fbbf24'%3ESR%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/seekresearch.css">
+</head>
+
+<body class="auth-gate-active">
+
+  <!-- ==========================================================================
+       21ST.DEV LAUNCH INTRO COMPONENT (RED CINEMATIC UPWARD OPENING)
+       ========================================================================== -->
+  <div id="launchIntroOverlay" class="launch-intro-overlay" role="dialog" aria-modal="true" aria-label="Seek Research Upward Opening Experience">
+    <!-- Vivid Crimson & Golden-Amber Ambient Aura Backdrop -->
+    <div class="launch-aura-backdrop">
+      <div class="aura-orb aura-orb-1"></div>
+      <div class="aura-orb aura-orb-2"></div>
+      <div class="aura-orb aura-orb-3"></div>
+      <div class="aura-vignette"></div>
+    </div>
+
+    <!-- Kinetic Launch Content -->
+    <div class="launch-content-wrap">
+      <!-- Kicker -->
+      <div class="launch-kicker-box">
+        <span class="launch-kicker-text" id="launchKickerText">INTRODUCING // SEEK RESEARCH</span>
+      </div>
+
+      <!-- Title Reveal with Red and Amber Glow -->
+      <div class="launch-title-container">
+        <h1 class="launch-main-title" id="launchMainTitle">
+          <span>Seek Research</span>
+        </h1>
+      </div>
+
+      <!-- Tagline -->
+      <p class="launch-tagline-text" id="launchTaglineText">
+        Your first research conversation starts here. Bridging students and faculty worldwide.
+      </p>
+
+      <!-- Badge Tickers -->
+      <div class="launch-badges-cluster" id="launchBadgesCluster">
+        <span class="launch-badge-pill">2026 · ACADEMIC OUTREACH</span>
+        <span class="launch-badge-pill highlight">✦ COLD MAIL GENERATOR ACTIVE</span>
+        <span class="launch-badge-pill">TOP 30 GLOBAL UNIS · 4 PILLARS</span>
+      </div>
+
+      <!-- Kinetic Progress Indicator with Red Glow -->
+      <div class="launch-progress-stage" id="launchProgressStage">
+        <div class="launch-progress-bar-track">
+          <div class="launch-progress-bar-fill" id="launchProgressFill"></div>
+        </div>
+        <div class="launch-progress-meta-row">
+          <span>INITIALIZING PROTOCOL</span>
+          <span id="launchProgressPercent">000%</span>
+        </div>
+      </div>
+
+      <!-- Direct Action Buttons in Intro -->
+      <div class="launch-direct-actions" id="launchDirectActions">
+        <button type="button" class="launch-action-primary" data-ui-action="dismiss-intro">
+          <span class="pulse-dot-red"></span>
+          <span>🔑 Student Login / Create Account ↑</span>
+        </button>
+        <button type="button" class="launch-action-secondary" data-ui-action="guest-go" data-target="coldMailer">
+          <span>✉ Launch Cold Mail Generator →</span>
+        </button>
+      </div>
+
+      <!-- Fast-Forward / Upward Reveal Button -->
+      <button type="button" class="launch-skip-trigger" data-ui-action="dismiss-intro" aria-label="Open Web Upward">
+        <span>Open Upward</span>
+        <span>↑</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       35MM ANALOG FILM GRAIN OVERLAY
+       ========================================================================== -->
+  <canvas id="filmGrainCanvas"></canvas>
+
+  <!-- ==========================================================================
+       TOP EDITORIAL HEADER
+       ========================================================================== -->
+  <header class="editorial-header">
+    <!-- Top-Left: Cyan Direct Hotline & Rate Limiter -->
+    <div class="header-col">
+      <a href="#coldMailer" class="phone-contact-pill" id="phoneCallLink" title="Jump to Cold Mail Outreach Studio">
+        OUTREACH STUDIO · DEMO
+      </a>
+    </div>
+
+    <!-- Top-Center: Role & Mission -->
+    <div class="header-col header-meta-block">
+      <span class="meta-lead">SeekResearch Platform</span>
+      <span class="meta-sub">Specialised in Faculty Discovery & Cold Inquiries</span>
+    </div>
+
+    <!-- Top-Center 2: Location & Live Time -->
+    <div class="header-col header-location-block">
+      <span class="location-city" id="locationCityLabel">
+        Currently in Cambridge (MIT/Harvard)
+      </span>
+      <span class="live-time-ticker" id="liveTimeTicker">
+        05:32:18 AM
+      </span>
+    </div>
+
+    <!-- Top-Right: Student Auth, High School Hub, Cold Mailer, Replay Intro & Plus Toggle -->
+    <div class="header-col header-actions-col">
+      <button type="button" class="header-auth-btn" id="headerAuthBtn" data-ui-action="open-portal" data-tab="login" title="Open Student Login, Create Account & Academic Data">
+        <span class="header-auth-status-dot"></span>
+        <span id="headerAuthLabel">Login / Create Acc</span>
+      </button>
+      <button type="button" class="header-hs-btn header-inner-only" data-ui-action="scroll-section" data-target="highSchoolPortal" title="Explore Pre-College Research Programs & ISEF Guides">
+        <span>🎓 High School Hub</span>
+      </button>
+      <button type="button" class="header-cold-mail-btn header-inner-only" data-ui-action="scroll-section" data-target="coldMailer" title="Jump to Cold Mail Generator">
+        <span class="pulse-dot-red"></span>
+        <span>✉ Cold Mail Generator</span>
+      </button>
+      <button type="button" class="intro-replay-btn" data-ui-action="replay-intro" title="Replay Red Upward Opening Sequence">
+        ⟲ Intro
+      </button>
+      <button type="button" class="menu-plus-btn header-inner-only" data-ui-action="scroll-section" data-target="coldMailer" aria-label="Open Cold Mailer">
+        <svg class="menu-plus-svg" viewBox="0 0 24 24" fill="none">
+          <line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" stroke-linecap="square" />
+          <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-linecap="square" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PAGE 1 (FIRST SCREEN): STUDENT LOGIN, CREATE ACCOUNT & STUDENT DATA PORTAL
+       ========================================================================== -->
+  <section class="student-portal-section" id="studentPortalSection">
+    <div class="container">
+      <div class="section-editorial-header">
+        <div>
+          <div class="sec-kicker">
+            <span class="dot dot-cyan"></span>
+            STUDENT ACADEMIC PROFILE &amp; ENTRY PORTAL // HIGHSCHOOL · UG · UNI · MS · PG
+          </div>
+          <h2 class="sec-title">Student Data, <span>Login &amp; Create Account</span></h2>
+        </div>
+        <div class="portal-header-aside">
+          <button type="button" class="back-to-app-btn" data-ui-action="close-portal">
+            ← Return to SeekResearch App
+          </button>
+          <div class="portal-header-desc">
+            Sign in or create your student account with name, grade/year, and level (High School, UG, Uni, MS, or PG) to enter SeekResearch &amp; auto-fill cold emails.
+          </div>
+        </div>
+      </div>
+
+      <div class="student-portal-grid">
+        <!-- LEFT PANEL: LOGIN / CREATE ACCOUNT OR LOGGED-IN PROFILE -->
+        <div class="student-auth-card">
+          <!-- SIGNED-OUT AUTH GATE -->
+          <div id="authLoggedOutView">
+            <div class="auth-mode-tabs" role="tablist" aria-label="Student Account Mode">
+              <button type="button" class="auth-mode-tab-btn active" id="tabBtnLogin" data-ui-action="switch-auth-tab" data-auth-tab="login" role="tab" aria-selected="true">
+                🔑 Login
+              </button>
+              <button type="button" class="auth-mode-tab-btn" id="tabBtnRegister" data-ui-action="switch-auth-tab" data-auth-tab="register" role="tab" aria-selected="false">
+                ✨ Create Account
+              </button>
+            </div>
+
+            <div class="auth-feedback-box" id="authFeedbackBox" role="status" aria-live="polite"></div>
+
+            <!-- LOGIN PANEL -->
+            <form id="loginFormPanel" class="auth-form-stack" novalidate>
+              <div>
+                <label class="input-label" for="loginEmailInput">Student Email</label>
+                <input type="email" id="loginEmailInput" class="input-field" placeholder="e.g. student@university.edu" maxlength="254" required>
+              </div>
+
+              <div>
+                <label class="input-label" for="loginPasswordInput">
+                  <span>Password</span>
+                  <button type="button" class="auth-inline-link" id="btnForgotPassword" data-ui-action="toggle-reset-panel">Forgot Password?</button>
+                </label>
+                <div class="password-wrap">
+                  <input type="password" id="loginPasswordInput" class="input-field" placeholder="Enter your password" required>
+                  <button type="button" class="password-toggle-btn" data-password-target="loginPasswordInput">Show</button>
+                </div>
+              </div>
+
+              <div id="forgotPasswordBox" class="forgot-password-box">
+                <div class="forgot-password-title">
+                  Reset Password via Firebase Email
+                </div>
+                <div class="auth-two-col">
+                  <input type="email" id="resetEmailInput" class="input-field" placeholder="Enter account email" maxlength="254">
+                  <button type="button" id="btnSendResetEmail" class="auth-secondary-btn" data-ui-action="send-reset-email">
+                    Send Reset Link
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" id="loginSubmitBtn" class="auth-submit-btn">
+                Log In &amp; Enter SeekResearch ➔
+              </button>
+
+              <div class="auth-footer-row">
+                <span class="auth-switch-prompt">
+                  New student? <button type="button" id="btnSwitchToRegister" class="auth-inline-switch-btn" data-ui-action="switch-auth-tab" data-auth-tab="register">Create Account ➔</button>
+                </span>
+                <span class="auth-secured-note">
+                  Secured by Firebase Auth
+                </span>
+              </div>
+
+              <button type="button" class="guest-skip-btn" data-ui-action="guest-go" data-target="heroStage">
+                Skip Login &amp; Preview SeekResearch Website as Guest →
+              </button>
+            </form>
+
+            <!-- CREATE ACCOUNT PANEL -->
+            <form id="registerFormPanel" class="auth-form-stack" novalidate>
+              <div>
+                <label class="input-label" for="regNameInput">
+                  <span>Full Name *</span>
+                  <span class="text-cyan-bright">Updates Credential Preview Live</span>
+                </label>
+                <input type="text" id="regNameInput" class="input-field" placeholder="e.g. Jordan Rivera" maxlength="120" required>
+              </div>
+
+              <div class="auth-two-col">
+                <div>
+                  <label class="input-label" for="regEmailInput">Account Email *</label>
+                  <input type="email" id="regEmailInput" class="input-field" placeholder="you@school.edu" maxlength="254" required>
+                </div>
+                <div>
+                  <label class="input-label" for="regPasswordInput">Create Password * (min 6 chars)</label>
+                  <div class="password-wrap">
+                    <input type="password" id="regPasswordInput" class="input-field" placeholder="Create password (6+ chars)" required>
+                    <button type="button" class="password-toggle-btn" data-password-target="regPasswordInput">Show</button>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <span class="input-label">
+                  <span>Academic Level * (High School / UG / Uni / MS / PG)</span>
+                </span>
+                <div class="level-pills-row">
+                  <label class="level-pill-radio">
+                    <input type="radio" name="regAcademicLevel" value="highschool" checked>
+                    <span class="level-pill-face">🎒 High School<small>Gr 9–12</small></span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="regAcademicLevel" value="ug">
+                    <span class="level-pill-face">🎓 UG<small>Undergrad</small></span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="regAcademicLevel" value="uni">
+                    <span class="level-pill-face">🏛 Uni<small>University</small></span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="regAcademicLevel" value="ms">
+                    <span class="level-pill-face">📘 MS<small>Master's</small></span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="regAcademicLevel" value="pg">
+                    <span class="level-pill-face">🔬 PG<small>Postgrad / PhD</small></span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="input-label" for="regGradeInput">
+                  <span>Grade / Academic Year *</span>
+                  <span class="text-amber-warm" id="regGradeHintLabel">e.g. Grade 9–12, IB, AP</span>
+                </label>
+                <input type="text" id="regGradeInput" class="input-field" value="Grade 11" placeholder="Enter your grade or year..." maxlength="60" required>
+                <div class="grade-chips-row" id="regGradeQuickChips">
+                  <!-- Populated dynamically by level -->
+                </div>
+              </div>
+
+              <div class="auth-two-col">
+                <div>
+                  <label class="input-label" for="regSchoolInput">School / University</label>
+                  <input type="text" id="regSchoolInput" class="input-field" placeholder="e.g. Lincoln High / State Univ." maxlength="160">
+                </div>
+                <div>
+                  <label class="input-label" for="regMajorInput">Major / Academic Track</label>
+                  <input type="text" id="regMajorInput" class="input-field" placeholder="e.g. Computer Science, Finance" maxlength="120">
+                </div>
+              </div>
+
+              <div class="auth-two-col">
+                <div>
+                  <label class="input-label" for="regPillarSelect">Research Pillar</label>
+                  <select id="regPillarSelect" class="uni-filter-select uni-filter-select-full">
+                    <option value="Sciences">🔬 Sciences &amp; Engineering</option>
+                    <option value="Commerce">💼 Commerce, Finance &amp; Econ</option>
+                    <option value="Design">🎨 Design &amp; Architecture</option>
+                    <option value="Humanities">📜 Humanities &amp; History</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="input-label" for="regSkillsInput">Skills &amp; Coursework</label>
+                  <input type="text" id="regSkillsInput" class="input-field" placeholder="e.g. Python, Stata, Rhino CAD" maxlength="400">
+                </div>
+              </div>
+
+              <div>
+                <label class="input-label" for="regProjectInput">Notable Project / Study Highlight</label>
+                <input type="text" id="regProjectInput" class="input-field" placeholder="e.g. built an open-source urban heat simulator in Python" maxlength="800">
+              </div>
+
+              <button type="submit" id="registerSubmitBtn" class="auth-submit-btn">
+                Create Student Account &amp; Enter SeekResearch ➔
+              </button>
+            </form>
+          </div>
+
+          <!-- SIGNED-IN PROFILE WORKSPACE -->
+          <div id="authLoggedInView">
+            <div class="profile-topbar">
+              <div>
+                <div class="profile-badge-row">
+                  <span class="profile-auth-kicker">
+                    ● FIREBASE AUTHENTICATED
+                  </span>
+                  <span id="activeRoleBadge" class="role-claim-pill">STUDENT ROLE</span>
+                </div>
+                <h3 id="activeProfileHeading">
+                  Student Name
+                </h3>
+                <div id="activeProfileEmailSub">
+                  email@domain.edu
+                </div>
+              </div>
+              <div class="flex-gap-sm-wrap">
+                <button type="button" id="btnToggleEditProfile" class="auth-secondary-btn" data-ui-action="toggle-edit-profile">✏ Edit Data</button>
+                <button type="button" id="btnCreateNewAccount" class="auth-secondary-btn" data-ui-action="create-new-account">＋ Create New</button>
+                <button type="button" id="btnLogoutStudent" class="auth-secondary-btn btn-danger-outline" data-ui-action="logout-account">Log Out</button>
+              </div>
+            </div>
+
+            <div id="emailVerificationBanner" class="verify-status-banner">
+              <span id="emailVerifyStatusText">Checking email verification...</span>
+              <div class="verify-actions-row">
+                <button type="button" id="btnResendVerify" class="grade-chip-btn" data-ui-action="resend-verify">Resend Verification</button>
+                <button type="button" id="btnRefreshVerify" class="grade-chip-btn" data-ui-action="refresh-verify">↻ Refresh Status</button>
+              </div>
+            </div>
+
+            <div class="auth-feedback-box mb-1rem" id="profileEditFeedback" role="status" aria-live="polite"></div>
+
+            <!-- Read-Only Summary View when Signed In -->
+            <div id="activeProfileSummaryBox" class="auth-form-stack">
+              <div class="credential-meta-grid" id="activeProfileSummaryGrid">
+                <!-- Populated dynamically -->
+              </div>
+              <div class="profile-skills-panel">
+                <span class="credential-cell-lbl">Skills &amp; Concrete Highlight</span>
+                <div id="activeProfileSkillsHighlight">—</div>
+              </div>
+              <button type="button" id="btnSyncToColdMailer" class="auth-submit-btn" data-ui-action="sync-to-mailer">
+                ✉ Sync Student Data to Cold Mail Generator ➔
+              </button>
+
+              <div class="danger-zone-box">
+                <div class="flex-between-center-wrap">
+                  <span class="danger-zone-label">
+                    Account Management &amp; Data Removal
+                  </span>
+                  <button type="button" id="btnToggleDeleteAccount" class="auth-secondary-btn btn-danger-compact" data-ui-action="toggle-delete-panel">
+                    🗑 Delete Account
+                  </button>
+                </div>
+                <form id="deleteAccountConfirmBox" class="delete-confirm-box">
+                  <div class="delete-confirm-note">
+                    Re-enter your current password to permanently delete your Firebase Auth account, profile, and submissions.
+                  </div>
+                  <div class="auth-two-col">
+                    <input type="password" id="deleteAccountPasswordInput" class="input-field" placeholder="Current password" required>
+                    <div class="delete-confirm-actions">
+                      <button type="submit" id="btnConfirmDeleteAccount" class="auth-secondary-btn btn-danger-confirm">Confirm Delete</button>
+                      <button type="button" id="btnCancelDeleteAccount" class="auth-secondary-btn" data-ui-action="toggle-delete-panel" data-force="false">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Inline Edit Form for Logged-In Student Data -->
+            <form id="editProfileForm" class="auth-form-stack">
+              <div class="auth-two-col">
+                <div>
+                  <label class="input-label" for="editNameInput">Full Name *</label>
+                  <input type="text" id="editNameInput" class="input-field" maxlength="120" required>
+                </div>
+                <div>
+                  <label class="input-label" for="editGradeInput">Grade / Academic Year *</label>
+                  <input type="text" id="editGradeInput" class="input-field" maxlength="60" required>
+                </div>
+              </div>
+
+              <div>
+                <span class="input-label">Academic Level (High School / UG / Uni / MS / PG)</span>
+                <div class="level-pills-row">
+                  <label class="level-pill-radio">
+                    <input type="radio" name="editAcademicLevel" value="highschool">
+                    <span class="level-pill-face">🎒 High School</span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="editAcademicLevel" value="ug">
+                    <span class="level-pill-face">🎓 UG</span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="editAcademicLevel" value="uni">
+                    <span class="level-pill-face">🏛 Uni</span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="editAcademicLevel" value="ms">
+                    <span class="level-pill-face">📘 MS</span>
+                  </label>
+                  <label class="level-pill-radio">
+                    <input type="radio" name="editAcademicLevel" value="pg">
+                    <span class="level-pill-face">🔬 PG</span>
+                  </label>
+                </div>
+                <div class="grade-chips-row" id="editGradeQuickChips"></div>
+              </div>
+
+              <div class="auth-two-col">
+                <div>
+                  <label class="input-label" for="editSchoolInput">School / University</label>
+                  <input type="text" id="editSchoolInput" class="input-field" maxlength="160">
+                </div>
+                <div>
+                  <label class="input-label" for="editMajorInput">Major / Track</label>
+                  <input type="text" id="editMajorInput" class="input-field" maxlength="120">
+                </div>
+              </div>
+
+              <div class="auth-two-col">
+                <div>
+                  <label class="input-label" for="editPillarSelect">Research Pillar</label>
+                  <select id="editPillarSelect" class="uni-filter-select uni-filter-select-full">
+                    <option value="Sciences">🔬 Sciences &amp; Engineering</option>
+                    <option value="Commerce">💼 Commerce, Finance &amp; Econ</option>
+                    <option value="Design">🎨 Design &amp; Architecture</option>
+                    <option value="Humanities">📜 Humanities &amp; History</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="input-label" for="editSkillsInput">Skills &amp; Coursework</label>
+                  <input type="text" id="editSkillsInput" class="input-field" maxlength="400">
+                </div>
+              </div>
+
+              <div>
+                <label class="input-label" for="editProjectInput">Highlight Project</label>
+                <input type="text" id="editProjectInput" class="input-field" maxlength="800">
+              </div>
+
+              <div class="edit-profile-actions">
+                <button type="submit" id="saveProfileSubmitBtn" class="auth-submit-btn flex-1">Save Student Data</button>
+                <button type="button" id="btnCancelEditProfile" class="auth-secondary-btn" data-ui-action="toggle-edit-profile" data-force="false">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: STUDENT CREDENTIAL CARD & PRIVACY / ADMIN WORKSPACE -->
+        <div class="student-pass-panel">
+          <div class="student-credential-card" id="studentCredentialCard">
+            <!-- Dynamically rendered analog student credential -->
+          </div>
+
+          <div id="studentPrivacyNotice" class="student-privacy-notice">
+            <div class="workspace-notice-title">
+              🔒 Private Student Workspace (Firestore Isolated)
+            </div>
+            <div>
+              Your profile and outreach form submissions are stored in Cloud Firestore scoped strictly to your authenticated UID. Other students cannot view your records, and passwords are never saved in Firestore.
+            </div>
+          </div>
+
+          <div id="adminConsolePanel" class="admin-console-panel">
+            <div class="flex-between-center-wrap">
+              <div class="admin-console-title">
+                🛡 Admin Moderation Console (Custom Claim Verified)
+              </div>
+              <button type="button" id="btnRefreshAdminConsole" class="grade-chip-btn" data-ui-action="admin-refresh">↻ Refresh</button>
+            </div>
+            <div class="flex-gap-sm-wrap">
+              <span id="adminStudentsCount" class="submission-meta-pill">0 Students</span>
+              <span id="adminSubmissionsCount" class="submission-meta-pill">0 Submissions</span>
+            </div>
+            <div id="adminModerationList" class="saved-students-list">
+              <!-- Populated only for authenticated admin claim users -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="seekAppMain">
+  <!-- ==========================================================================
+       HERO STAGE: MONUMENTAL "SEEK TO RESEARCH" & FOREGROUND SILHOUETTE
+       ========================================================================== -->
+  <section class="hero-editorial-stage" id="heroStage">
+    <!-- Anamorphic Golden Light Leaks -->
+    <div class="anamorphic-light-leak" id="anamorphicLightLeak"></div>
+    <div class="light-leak-secondary" aria-hidden="true"></div>
+    <div class="light-leak-left-edge" aria-hidden="true"></div>
+
+    <!-- Giant Monumental Background Typography: SEEK TO RESEARCH -->
+    <div class="monumental-face-typography" aria-hidden="true">
+      <!-- Line 1: SEEK ... TO -->
+      <div class="typo-row-top">
+        <span class="giant-lettering left-shaded" id="typoFaceTop">SEEK</span>
+        <span class="giant-lettering light-leak-lit" id="typoToTop">TO</span>
+      </div>
+
+      <!-- Line 2: RE ... SEARCH (Framing the silhouette portrait) -->
+      <div class="typo-row-bottom">
+        <span class="giant-lettering left-shaded" id="typoFBottom">RE</span>
+        <span class="giant-lettering light-leak-lit" id="typoCeBottom">SEARCH</span>
+      </div>
+    </div>
+
+    <!-- Foreground Overlapping Silhouette Portrait (Academic Mentor & Student) -->
+    <div class="silhouette-stage-wrap" id="silhouetteStage">
+      <svg class="producer-silhouette-svg" viewBox="0 0 500 700" preserveAspectRatio="xMidYMax meet">
+        <defs>
+          <linearGradient id="silhouetteShade" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0e0204" />
+            <stop offset="55%" stop-color="#1c0508" />
+            <stop offset="85%" stop-color="#380d12" />
+            <stop offset="100%" stop-color="#691a22" />
+          </linearGradient>
+
+          <linearGradient id="goldenRimGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent" />
+            <stop offset="80%" stop-color="rgba(251, 191, 36, 0.4)" />
+            <stop offset="100%" stop-color="rgba(254, 240, 138, 0.95)" />
+          </linearGradient>
+
+          <linearGradient id="shirtCollarGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.9" />
+            <stop offset="50%" stop-color="#fed7aa" stop-opacity="0.85" />
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.75" />
+          </linearGradient>
+        </defs>
+
+        <!-- Torso & Collar Shirt -->
+        <path d="M120,700 L160,540 L210,480 L290,480 L340,540 L400,700 Z" fill="url(#shirtCollarGrad)" opacity="0.85" />
+        <path d="M240,490 L260,490 L255,700 L245,700 Z" fill="#2d0509" />
+        <path d="M210,480 L250,530 L230,540 Z" fill="#ffffff" />
+        <path d="M290,480 L250,530 L270,540 Z" fill="#fbbf24" />
+
+        <!-- Neck -->
+        <path d="M220,490 L220,380 L280,380 L280,490 Z" fill="url(#silhouetteShade)" />
+
+        <!-- Head Silhouette in Three-Quarters Profile -->
+        <path d="
+          M200,340
+          C185,320 180,280 182,240
+          C185,170 215,120 260,110
+          C305,100 340,130 355,180
+          C365,220 365,260 360,290
+          C355,325 340,350 330,365
+          C315,385 285,410 265,415
+          C245,418 215,395 205,370
+          Z" fill="url(#silhouetteShade)" />
+
+        <path d="
+          M190,240
+          C188,180 220,120 265,110
+          C310,100 350,135 358,185
+          C340,170 310,165 270,175
+          C230,185 205,210 190,240
+          Z" fill="#080102" />
+
+        <path d="M190,260 C182,265 180,295 192,305 L196,285 Z" fill="#140205" />
+
+        <!-- Golden Anamorphic Rim Light Streak along Right Contour of Face -->
+        <path d="
+          M345,160
+          C365,210 365,260 360,290
+          C355,325 340,350 330,365
+          C315,385 285,410 265,415
+          " stroke="url(#goldenRimGlow)" stroke-width="9" stroke-linecap="round" fill="none" filter="drop-shadow(0 0 15px #fef08a)" />
+      </svg>
+    </div>
+
+    <!-- Center Mission Statement & Services List -->
+    <div class="hero-center-content-block">
+      <p class="producer-mission-statement">
+        Navigating your research journey across Sciences, Commerce, Design &amp; Humanities through verified faculty from the Top 30 World Universities and bespoke, respectful cold outreach.
+      </p>
+
+      <!-- Direct Hero Action Buttons -->
+      <div class="hero-cta-actions-row">
+        <button type="button" class="btn-hero-coldmail" data-ui-action="scroll-section" data-target="coldMailer">
+          <span class="pulse-dot-red"></span>
+          <span>✉ Launch Cold Mail Generator</span>
+        </button>
+        <button type="button" class="btn-hero-faculty" data-ui-action="scroll-section" data-target="professorsSection">
+          <span>🔍 Explore Top 30 Global Uni Faculty</span>
+        </button>
+      </div>
+
+      <div class="helping-with-section">
+        <span class="helping-label">Helping with:</span>
+        <ul class="services-nav-list">
+          <li><a class="service-item-link" data-ui-action="scroll-section" data-target="professorsSection" data-pillar="Sciences">🔬 Sciences &amp; Engineering Labs</a></li>
+          <li><a class="service-item-link" data-ui-action="scroll-section" data-target="professorsSection" data-pillar="Commerce">💼 Commerce, Finance &amp; Economics</a></li>
+          <li><a class="service-item-link" data-ui-action="scroll-section" data-target="professorsSection" data-pillar="Design">🎨 Design, Architecture &amp; Media</a></li>
+          <li><a class="service-item-link" data-ui-action="scroll-section" data-target="professorsSection" data-pillar="Humanities">📜 Humanities, History &amp; Philosophy</a></li>
+          <li><a class="service-item-link" data-ui-action="scroll-section" data-target="highSchoolPortal">🎓 High School &amp; Pre-College</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom-Left Manifesto Kicker -->
+    <div class="hero-bottom-manifesto">
+      <div>Only.</div>
+      <div>Verified Global Faculty.</div>
+      <div>Always Respectful.</div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROFESSORS DIRECTORY // TOP 30 WORLD UNIVERSITIES (4 PILLARS)
+       ========================================================================== -->
+  <section class="section-editorial-padding" id="professorsSection">
+    <div class="container">
+      <div class="section-editorial-header">
+        <div>
+          <div class="sec-kicker">
+            <span class="dot"></span>
+            VERIFIED OFFICIAL UNI WEBSITES // QS TOP 30 GLOBAL UNIVERSITIES
+          </div>
+          <h2 class="sec-title">Where Students <span>Find Research</span></h2>
+        </div>
+        <div id="facultyCountLabel">
+          [ INDEXING VERIFIED FACULTY... ]
+        </div>
+      </div>
+
+      <!-- Search and Filter Toolbar -->
+      <div class="prof-filter-toolbar">
+        <div class="search-input-box">
+          <input type="text" class="search-input-field" id="profSearchInput" placeholder="Search by professor, Top 30 uni (MIT, Oxford, Wharton, Tsinghua, ETH, Melbourne, McGill...), or topic...">
+        </div>
+
+        <!-- 4 Academic Pillars Row -->
+        <div class="pillar-tabs-bar" role="tablist" aria-label="Academic Pillars">
+          <button type="button" class="pillar-tab-btn active" data-pillar="all">🌐 All 4 Pillars</button>
+          <button type="button" class="pillar-tab-btn" data-pillar="Sciences">🔬 Sciences &amp; Eng</button>
+          <button type="button" class="pillar-tab-btn" data-pillar="Commerce">💼 Commerce &amp; Econ</button>
+          <button type="button" class="pillar-tab-btn" data-pillar="Design">🎨 Design &amp; Arch</button>
+          <button type="button" class="pillar-tab-btn" data-pillar="Humanities">📜 Humanities &amp; Arts</button>
+        </div>
+
+        <!-- Sub-Disciplines + QS Top 30 University Selector -->
+        <div class="toolbar-subrow">
+          <div class="filter-chips-cluster">
+            <button type="button" class="filter-chip-btn active" data-discipline="all">All Subfields</button>
+            <button type="button" class="filter-chip-btn filter-chip-hs" data-discipline="HighSchool">🎓 High School Friendly</button>
+            <button type="button" class="filter-chip-btn" data-discipline="AI">AI &amp; Computing</button>
+            <button type="button" class="filter-chip-btn" data-discipline="Physics">Physics &amp; Quantum</button>
+            <button type="button" class="filter-chip-btn" data-discipline="Bio">Bio &amp; Bioeng</button>
+            <button type="button" class="filter-chip-btn" data-discipline="Finance">Finance &amp; Econ</button>
+            <button type="button" class="filter-chip-btn" data-discipline="Management">Mgmt &amp; Analytics</button>
+            <button type="button" class="filter-chip-btn" data-discipline="Architecture">Arch &amp; Urban Design</button>
+            <button type="button" class="filter-chip-btn" data-discipline="History">History, Lit &amp; Phil</button>
+          </div>
+
+          <select id="uniFilterSelect" class="uni-filter-select" aria-label="Filter by Top 30 World University">
+            <option value="all">🏛 All Top 30 World Universities</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Professors Grid -->
+      <div class="professors-cards-grid" id="professorsGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5B. HIGH SCHOOL RESEARCH GATEWAY // PRE-COLLEGE LAB APPRENTICESHIP
+       ========================================================================== -->
+  <section class="highschool-section-padding" id="highSchoolPortal">
+    <div class="container">
+      <div class="hs-portal-card">
+        <!-- Header Strip -->
+        <div class="hs-header-strip">
+          <div>
+            <div class="hs-kicker-tag">
+              <span class="pulse-dot-red"></span>
+              <span>PRE-COLLEGE PATHWAY // GRADES 9–12 RESEARCH INITIATIVE</span>
+            </div>
+            <h2 class="hs-main-heading">
+              The High School <span>Research Gateway</span>
+            </h2>
+            <p class="hs-lead-text">
+              How ambitious pre-college students land lab mentorships, co-author publications with postdocs, and qualify for ISEF, Regeneron STS, and Olympiads.
+            </p>
+          </div>
+
+          <div class="hs-header-actions">
+            <button type="button" class="launch-action-primary" data-ui-action="load-hs-preset">
+              <span>⚡ Load High School Email Preset</span>
+            </button>
+            <a href="#coldMailer" class="btn-hs-apply">
+              <span>Open Mailer ↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6 Prestigious High School Programs -->
+        <div class="hs-grid-kicker">
+          ✦ ACCREDITED PRE-COLLEGE RESEARCH INSTITUTES &amp; LAB PATHWAYS
+        </div>
+
+        <div class="hs-programs-grid">
+          <!-- Card 1: MIT PRIMES -->
+          <div class="hs-prog-card">
+            <div class="hs-card-meta-top">
+              <span class="hs-badge-funded">100% Free · Fully Funded</span>
+              <span class="hs-badge-deadline">Deadline: Nov 30 / Annual</span>
+            </div>
+            <h3 class="hs-prog-title">MIT PRIMES / PRIMES-USA</h3>
+            <div class="hs-prog-org">MIT Department of Mathematics &amp; CS</div>
+            <p class="hs-prog-desc">
+              Year-long research program pairing high schoolers with MIT graduate students and faculty for publishable mathematical and computational research.
+            </p>
+            <div class="hs-tags-row">
+              <span class="hs-tag-pill">Grades 9-11</span>
+              <span class="hs-tag-pill">Remote Nationwide</span>
+              <span class="hs-tag-pill">Pure Math / CS</span>
+            </div>
+            <button type="button" class="btn-hs-apply" data-ui-action="load-prof-draft" data-prof-id="mit_barzilay">
+              <span>Draft Inquiry to MIT Labs ➔</span>
+            </button>
+          </div>
+
+          <!-- Card 2: RSI -->
+          <div class="hs-prog-card">
+            <div class="hs-card-meta-top">
+              <span class="hs-badge-funded">Free · 100 Scholars Accepted</span>
+              <span class="hs-badge-deadline">Deadline: Jan 15</span>
+            </div>
+            <h3 class="hs-prog-title">Research Science Institute (RSI)</h3>
+            <div class="hs-prog-org">CEE &amp; MIT Campus (Cambridge, MA)</div>
+            <p class="hs-prog-desc">
+              The world's most prestigious summer research institute. 6 weeks combining on-campus scientific coursework with an off-campus individual research internship.
+            </p>
+            <div class="hs-tags-row">
+              <span class="hs-tag-pill">Rising High School Seniors</span>
+              <span class="hs-tag-pill">Top ISEF Feeder</span>
+              <span class="hs-tag-pill">STEM Full-Spectrum</span>
+            </div>
+            <button type="button" class="btn-hs-apply" data-ui-action="load-hs-preset">
+              <span>Prepare RSI Cold Outreach ➔</span>
+            </button>
+          </div>
+
+          <!-- Card 3: Stanford SIMR -->
+          <div class="hs-prog-card">
+            <div class="hs-card-meta-top">
+              <span class="hs-badge-funded">$500–$2,500 Stipend</span>
+              <span class="hs-badge-deadline">Deadline: Feb 25</span>
+            </div>
+            <h3 class="hs-prog-title">Stanford SIMR Bio-Med Summer</h3>
+            <div class="hs-prog-org">Stanford University School of Medicine</div>
+            <p class="hs-prog-desc">
+              8-week intensive medical research where high schoolers perform direct hands-on laboratory research alongside Stanford faculty and postdoctoral scholars.
+            </p>
+            <div class="hs-tags-row">
+              <span class="hs-tag-pill">Ages 16+</span>
+              <span class="hs-tag-pill">Immunology · Cancer Bio · Neuro</span>
+              <span class="hs-tag-pill">Lab Mentorship</span>
+            </div>
+            <button type="button" class="btn-hs-apply" data-ui-action="load-prof-draft" data-prof-id="stanford_feifei">
+              <span>Draft to Stanford Research ➔</span>
+            </button>
+          </div>
+
+          <!-- Card 4: Simons Summer Research -->
+          <div class="hs-prog-card">
+            <div class="hs-card-meta-top">
+              <span class="hs-badge-funded">Full Fellowship</span>
+              <span class="hs-badge-deadline">Deadline: Feb 07</span>
+            </div>
+            <h3 class="hs-prog-title">Simons Summer Research Program</h3>
+            <div class="hs-prog-org">Stony Brook University</div>
+            <p class="hs-prog-desc">
+              Fellows join active research teams, learn laboratory techniques, and prepare an authentic written research abstract and poster presentation.
+            </p>
+            <div class="hs-tags-row">
+              <span class="hs-tag-pill">Current 11th Graders</span>
+              <span class="hs-tag-pill">Physics / Chem / Biotech</span>
+            </div>
+            <button type="button" class="btn-hs-apply" data-ui-action="load-prof-draft" data-prof-id="berkeley_levine">
+              <span>Draft Inquiry ➔</span>
+            </button>
+          </div>
+
+          <!-- Card 5: NIH HS-SIP -->
+          <div class="hs-prog-card">
+            <div class="hs-card-meta-top">
+              <span class="hs-badge-funded">Paid NIH Trainee Stipend</span>
+              <span class="hs-badge-deadline">Deadline: Feb 16</span>
+            </div>
+            <h3 class="hs-prog-title">NIH High School Summer Internship (HS-SIP)</h3>
+            <div class="hs-prog-org">National Institutes of Health (Bethesda, MD &amp; Campuses)</div>
+            <p class="hs-prog-desc">
+              Summer biomedical and health data research working directly with senior NIH investigators in Bethesda, Baltimore, and Research Triangle Park.
+            </p>
+            <div class="hs-tags-row">
+              <span class="hs-tag-pill">Ages 17+ or HS Seniors</span>
+              <span class="hs-tag-pill">Biomedical Data</span>
+              <span class="hs-tag-pill">Gov Labs</span>
+            </div>
+            <button type="button" class="btn-hs-apply" data-ui-action="load-prof-draft" data-prof-id="jhu_miller">
+              <span>Draft Inquiry to JHU / NIH Bio-Eng ➔</span>
+            </button>
+          </div>
+
+          <!-- Card 6: Local University Lab Apprenticeship Protocol -->
+          <div class="hs-prog-card hs-prog-card-featured">
+            <div class="hs-card-meta-top">
+              <span class="hs-badge-funded hs-badge-amber">Independent Outreach</span>
+              <span class="hs-badge-deadline">Year-Round / Rolling</span>
+            </div>
+            <h3 class="hs-prog-title">Regional University Lab Apprenticeship</h3>
+            <div class="hs-prog-org">State Universities &amp; Regional Research Institutes</div>
+            <p class="hs-prog-desc">
+              Over 68% of high school ISEF finalists find mentors by respectfully cold-emailing junior faculty, postdocs, and PhD students at regional colleges near their home.
+            </p>
+            <div class="hs-tags-row">
+              <span class="hs-tag-pill">Grades 9-12</span>
+              <span class="hs-tag-pill">Dry Lab / Computational</span>
+              <span class="hs-tag-pill">Self-Directed</span>
+            </div>
+            <button type="button" class="btn-hs-apply btn-hs-apply-amber" data-ui-action="load-hs-preset">
+              <span>Load High School Cold Email Template ➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Essential Rules for High Schoolers Reaching Out to Labs -->
+        <div class="hs-playbook-grid">
+          <div class="hs-rule-item">
+            <div class="hs-rule-num">01</div>
+            <h4 class="hs-rule-title">Offer Free Assistance, Never Ask For Pay</h4>
+            <p class="hs-rule-body">
+              University grant funding is strictly tied to enrolled graduate students. State clearly that you are seeking knowledge and experience with zero financial expectation.
+            </p>
+          </div>
+
+          <div class="hs-rule-item">
+            <div class="hs-rule-num">02</div>
+            <h4 class="hs-rule-title">Target Junior Faculty, Postdocs & PhDs</h4>
+            <p class="hs-rule-body">
+              Tenured chairs get 200+ emails/day. Postdoctoral researchers and senior PhD candidates do the hands-on coding and welcome diligent high school assistants to speed up data pipelines.
+            </p>
+          </div>
+
+          <div class="hs-rule-item">
+            <div class="hs-rule-num">03</div>
+            <h4 class="hs-rule-title">Focus on Computational / "Dry Lab" Skills</h4>
+            <p class="hs-rule-body">
+              OSHA and university safety regulations heavily restrict minors in bio/chem wet-labs. Computational tasks (Python, PyTorch, R, data scraping) can be performed remotely and legally.
+            </p>
+          </div>
+
+          <div class="hs-rule-item">
+            <div class="hs-rule-num">04</div>
+            <h4 class="hs-rule-title">Show Tangible Proof of Work</h4>
+            <p class="hs-rule-body">
+              Don't just say you love science: link a clean GitHub repo, Kaggle analysis, or a 1-page literature review note proving you read and understood their recent publication.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COLD MAILING TOOL FOR STUDENTS SECTION
+       ========================================================================== -->
+  <section class="cold-mail-section-padding" id="coldMailer">
+    <div class="container">
+      <div class="composer-studio-card">
+        <div class="composer-studio-header">
+          <div>
+            <div class="composer-kicker">
+              ACADEMIC OUTREACH STUDIO // ZERO-SPAM PROTOCOL
+            </div>
+            <h2 class="composer-title">
+              The Cold Mail <span class="text-amber-warm">Generator</span> &amp; Outreach Studio
+            </h2>
+          </div>
+          <div class="composer-rate-row">
+            <div id="dailyRateLimitBadge">
+              ✦ RATE LIMIT: 0 / 5 OUTREACH EMAILS USED TODAY (5 LEFT)
+            </div>
+            <button type="button" id="btnResetDailyQuota" class="preset-prof-pill preset-pill-compact" data-ui-action="reset-quota" title="Reset today's 5-mail counter">↻ Reset</button>
+          </div>
+        </div>
+
+        <div class="composer-layout-grid">
+          <!-- Inputs Column -->
+          <div class="composer-inputs-col">
+            <!-- Synced Student Account Strip -->
+            <div class="coldmailer-profile-strip" id="coldMailerProfileStrip">
+              <div class="strip-status-guest">
+                🪪 Sign in or create a Student Account (High School / UG / Uni / MS / PG) to auto-fill drafts
+              </div>
+              <button type="button" id="btnColdMailerLogin" class="preset-prof-pill preset-pill-cyan" data-ui-action="open-portal" data-tab="login">
+                Login / Create Acc ↑
+              </button>
+            </div>
+
+            <!-- 1-Click Fast Presets & Verified Professor Picker -->
+            <div class="composer-preset-box">
+              <span class="composer-preset-label">
+                <span class="pulse-dot-red"></span>
+                <span>Select Verified Professor or Preset:</span>
+              </span>
+              <select id="profDirectorySelect" class="uni-filter-select w-full" aria-label="Choose any verified professor across Top 30 Universities">
+                <option value="">— Pick any of 138 Verified Top-30 Professors —</option>
+              </select>
+              <div class="preset-pills-wrap">
+                <button type="button" class="preset-prof-pill preset-pill-hs" data-ui-action="load-hs-preset">🎓 High School ISEF Preset</button>
+                <button type="button" class="preset-prof-pill" data-ui-action="load-prof-draft" data-prof-id="mit_barzilay">🔬 Dr. Regina Barzilay (MIT)</button>
+                <button type="button" class="preset-prof-pill" data-ui-action="load-prof-draft" data-prof-id="mit_lo">💼 Prof. Andrew W. Lo (MIT Sloan)</button>
+                <button type="button" class="preset-prof-pill" data-ui-action="load-prof-draft" data-prof-id="stanford_kelley">🎨 Prof. David Kelley (Stanford d.school)</button>
+                <button type="button" class="preset-prof-pill" data-ui-action="load-prof-draft" data-prof-id="oxford_frankopan">📜 Prof. Peter Frankopan (Oxford)</button>
+                <button type="button" class="preset-prof-pill" data-ui-action="load-prof-draft" data-prof-id="penn_goldstein">💼 Prof. Itay Goldstein (Wharton)</button>
+              </div>
+            </div>
+
+            <!-- Selected Professor Verified Research Profile & Papers Brief -->
+            <div class="selected-prof-research-card" id="selectedProfResearchCard">
+              <!-- Populated dynamically with all research this professor did -->
+            </div>
+
+            <div class="auth-two-col">
+              <div>
+                <label class="input-label" for="targetProfInput">Target Professor</label>
+                <input type="text" id="targetProfInput" class="input-field" value="Prof. Regina Barzilay" placeholder="Professor Name" maxlength="120">
+              </div>
+              <div>
+                <label class="input-label" for="targetUniInput">University &amp; School / Lab</label>
+                <input type="text" id="targetUniInput" class="input-field" value="MIT (QS #1) · CSAIL & Jameel Clinic (EECS)" placeholder="Institution & Department" maxlength="180">
+              </div>
+            </div>
+
+            <div>
+              <label class="input-label" for="targetPaperInput">
+                <span>Primary Paper / Research Focus Cited</span>
+                <span class="text-amber-warm">Anchor in real work</span>
+              </label>
+              <input type="text" id="targetPaperInput" class="input-field" value="AI in oncology, early cancer diagnostics & molecular antibiotic discovery" placeholder="Focus area, monograph, or studio theme" maxlength="300">
+            </div>
+
+            <div>
+              <label class="input-label" for="targetResearchWorkInput">
+                <span>All Professor Research Included in Mail</span>
+                <span class="text-cyan-bright">Auto-generated on selection</span>
+              </label>
+              <textarea id="targetResearchWorkInput" class="textarea-field" rows="2" maxlength="1500" placeholder="Summary of all research this professor did (auto-filled when picking any faculty member)...">School of Engineering Distinguished Professor for AI and Health. Develops machine learning models for early oncology screening and computational drug and antibiotic discovery.</textarea>
+            </div>
+
+            <div>
+              <label class="input-label">Outreach Strategy (By Discipline &amp; Level)</label>
+              <div class="strategy-pills-grid">
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="highschool">
+                  <span class="strategy-badge strategy-badge-hs">🎓 High School Scholar</span>
+                </label>
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="undergrad" checked>
+                  <span class="strategy-badge">🔬 STEM Undergrad RA</span>
+                </label>
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="commerce">
+                  <span class="strategy-badge strategy-badge-commerce">💼 Commerce / Econ</span>
+                </label>
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="design">
+                  <span class="strategy-badge strategy-badge-design">🎨 Design / Arch Studio</span>
+                </label>
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="humanities">
+                  <span class="strategy-badge strategy-badge-humanities">📜 Humanities / Archive</span>
+                </label>
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="summer">
+                  <span class="strategy-badge">Summer REU / Fellow</span>
+                </label>
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="grad">
+                  <span class="strategy-badge">Grad / Master's</span>
+                </label>
+                <label class="strategy-radio">
+                  <input type="radio" name="emailStrategy" value="paper">
+                  <span class="strategy-badge">Work Discussion</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="auth-two-col">
+              <div>
+                <label class="input-label" for="studentNameInput">Your Name</label>
+                <input type="text" id="studentNameInput" class="input-field" value="Maya Chen" placeholder="Your Name" maxlength="120">
+              </div>
+              <div>
+                <label class="input-label" for="studentSchoolInput">School &amp; Year</label>
+                <input type="text" id="studentSchoolInput" class="input-field" value="2nd Year CS @ Univ. of Washington" placeholder="University & Major" maxlength="300">
+              </div>
+            </div>
+
+            <div>
+              <label class="input-label" for="studentSkillsInput">Relevant Skills, Tools &amp; Coursework</label>
+              <input type="text" id="studentSkillsInput" class="input-field" value="Python, PyTorch, Linear Algebra, Econometrics / Studio Critique" placeholder="e.g. Python, Econometrics, Rhino/CAD, Archival Research" maxlength="400">
+            </div>
+
+            <div>
+              <label class="input-label" for="studentProjectInput">Concrete Project / Empirical Study / Design Work</label>
+              <textarea id="studentProjectInput" class="textarea-field" rows="2" maxlength="800" placeholder="Mention one concrete codebase, empirical model, design studio project, or historical essay...">built a biomedical imaging triage prototype in PyTorch evaluating diagnostic recall tradeoffs</textarea>
+            </div>
+          </div>
+
+          <!-- Editable Draft & Action Column -->
+          <div class="composer-preview-col">
+            <div class="preview-header-strip">
+              <div class="preview-badge-pill">
+                <span>Editable Cold Mail Studio</span>
+              </div>
+              <span id="mailEditStateBadge">✦ Auto-Synced to Inputs</span>
+            </div>
+
+            <!-- Editable Subject Line -->
+            <div class="subject-preview-card">
+              <strong>Subject:</strong>
+              <input type="text" id="subjectEditorInput" class="subject-editor-input" value="Prospective undergraduate research inquiry — Maya Chen" maxlength="200" aria-label="Edit email subject line">
+            </div>
+
+            <!-- Mode Toggle: Edit Mail Text vs Variable Highlight Preview -->
+            <div class="mail-editor-toolbar">
+              <div class="mail-mode-tabs" role="tablist" aria-label="Mail Editor View Mode">
+                <button type="button" class="mail-mode-btn active" id="btnMailModeEdit" data-ui-action="mail-mode" data-mode="edit">
+                  ✏ Edit Mail
+                </button>
+                <button type="button" class="mail-mode-btn" id="btnMailModePreview" data-ui-action="mail-mode" data-mode="preview">
+                  👁 Highlight View
+                </button>
+              </div>
+              <button type="button" id="btnRegenerateDraft" class="mail-reset-btn" data-ui-action="regenerate-draft" title="Re-generate draft cleanly from inputs & selected professor research">
+                ↻ Regenerate Draft
+              </button>
+            </div>
+
+            <!-- Direct Editable Email Body Textarea -->
+            <textarea id="emailBodyEditor" class="email-editor-textarea" maxlength="5000" aria-label="Edit your cold email body directly"></textarea>
+
+            <!-- Highlighted Variable Preview (optional view) -->
+            <div class="email-live-body" id="emailBodyText">
+              <!-- Dynamically populated with variable highlighting -->
+            </div>
+
+            <!-- Anti-Spam & Academic Quality Radar -->
+            <div class="academic-radar-bar">
+              <div class="radar-col">
+                <span class="radar-tag">Word Count</span>
+                <span class="radar-metric" id="wordCountMetric">160 words</span>
+              </div>
+              <div class="radar-col">
+                <span class="radar-tag">Daily Allowance</span>
+                <span class="radar-metric" id="radarDailyCapMetric">5 / Day</span>
+              </div>
+              <div class="radar-col">
+                <span class="radar-tag">Spam Score</span>
+                <span class="radar-metric text-cyan-bright">0% Clean</span>
+              </div>
+              <div class="radar-col">
+                <span class="radar-tag">Research Included</span>
+                <span class="radar-metric" id="radarProfWorkStatus">Verified ✓</span>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="composer-actions-group">
+              <button type="button" id="btnCopyColdEmail" class="btn-action-amber" data-ui-action="copy-email">
+                📋 Copy Cold Email
+              </button>
+              <button type="button" id="btnSaveSubmission" class="btn-action-ghost" data-ui-action="save-submission">
+                💾 Save Form Submission
+              </button>
+              <button type="button" id="btnOpenMailClient" class="btn-action-ghost" data-ui-action="open-mail-client">
+                ✉️ Open in Mail App (Gmail)
+              </button>
+              <button type="button" id="btnSaveDraftOnly" class="btn-action-ghost" data-ui-action="save-draft-only" title="Save draft text only (does not schedule or send an email)">
+                📝 Save Draft
+              </button>
+            </div>
+
+            <div class="submissions-empty-note draft-storage-note">
+              ℹ <strong>Draft Storage Only:</strong> Saving a draft or form submission stores your text for later editing and counts toward your 5/day limit — it does <strong>not</strong> schedule or send any email. Send manually via <strong>Open in Mail App (Gmail)</strong> or <strong>Copy Cold Email</strong>.
+            </div>
+
+            <!-- Saved Outreach Submissions (Scoped strictly to Authenticated Student UID) -->
+            <div class="submissions-history-card" id="mySubmissionsPanel">
+              <div class="flex-between-center-wrap">
+                <span class="submissions-panel-title">
+                  🗂 My Firestore Outreach Submissions
+                </span>
+                <span id="mySubmissionsCountBadge">
+                  SIGN IN TO SAVE
+                </span>
+              </div>
+              <div id="editingSubmissionBanner">
+                <span id="editingSubmissionLabel">Editing saved submission</span>
+                <button type="button" id="btnCancelSubmissionEdit" class="grade-chip-btn" data-ui-action="cancel-sub-edit">Cancel Edit</button>
+              </div>
+              <div id="mySubmissionsList">
+                <div class="submissions-empty-note">
+                  Sign in with your student account to store outreach drafts in Cloud Firestore under your UID. Saving a draft stores text only and does not schedule or send an email.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TUESDAY CADENCE RADAR SECTION
+       ========================================================================== -->
+  <section class="tuesday-cadence-stage" id="tuesdaySection">
+    <div class="container">
+      <div class="cadence-banner-card">
+        <div>
+          <div class="composer-kicker">
+            OPTIMAL OUTREACH TIMING // THE TUESDAY WINDOW
+          </div>
+          <h3 class="cadence-heading">
+            Why Tuesday Morning at 09:15 AM?
+          </h3>
+          <p class="cadence-body">
+            Statistical analysis of academic outreach shows faculty response rates peak at <strong>42.4%</strong> on Tuesday between 09:00 AM and 10:30 AM local time. Avoid Monday inbox overflows and Friday weekend wind-downs. <em>(Recommended manual send window only — saving a draft does not schedule or send emails automatically.)</em>
+          </p>
+        </div>
+
+        <div class="cadence-stat-col">
+          <div class="cadence-big-stat">+42.4%</div>
+          <div class="cadence-stat-sub">
+            Higher professor reply rate
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BOTTOM INTERACTIVE FILM DOCK
+       ========================================================================== -->
+  <div class="bottom-film-dock" aria-label="Analog Film & Atmosphere Controls">
+    <button type="button" class="film-dock-btn dock-btn-student" data-ui-action="open-portal" data-tab="login" id="dockStudentBtn">
+      <span>🪪 Student Account</span>
+    </button>
+
+    <button type="button" class="film-dock-btn dock-btn-hs" data-ui-action="scroll-section" data-target="highSchoolPortal">
+      <span>🎓 High School Hub</span>
+    </button>
+
+    <button type="button" class="film-dock-btn dock-btn-mailer" data-ui-action="scroll-section" data-target="coldMailer">
+      <span>✉ Cold Mail Generator</span>
+    </button>
+
+    <button type="button" class="film-dock-btn" id="dockAudioBtn" data-ui-action="toggle-audio">
+      <span>♫ Tape Hiss: Off</span>
+    </button>
+
+    <button type="button" class="film-dock-btn" id="dockTimezoneBtn" data-ui-action="cycle-timezone">
+      <span>⏱ Cambridge (EST)</span>
+    </button>
+
+    <button type="button" class="film-dock-btn active" id="dockGrainBtn" data-ui-action="toggle-grain">
+      <span>✦ 35mm Grain</span>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="editorial-footer">
+    <div class="footer-flex">
+      <div>
+        <div class="footer-brand-title">
+          SEEKRESEARCH.
+        </div>
+        <p class="footer-brand-sub">
+          Global Research Outreach · Sciences, Commerce, Design &amp; Humanities · Official Verified Top 30 University Faculty
+        </p>
+      </div>
+
+      <div class="footer-meta-cyan">
+        OUTREACH STUDIO · DEMO
+      </div>
+
+      <div class="footer-copyright">
+        © 2026 SeekResearch Platform. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <!-- ==========================================================================
+       FLOATING TOAST NOTIFICATION
+       ========================================================================== -->
+  <div class="toast-pill-notification" id="toastPill">
+    Cold email copied to clipboard!
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: PROFESSORS DATABASE, COLD EMAIL ENGINE & FILM NOISE
+       ========================================================================== -->
+  <script src="./js/seekresearch-app.js"></script>
+  <script type="module" src="./js/firebase-portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none" role="img" aria-label="Sample Photo Placeholder: Educational Supplies Distribution Drive">
+  <rect width="600" height="400" rx="16" fill="#F0FDF4" />
+  <rect x="8" y="8" width="584" height="384" rx="12" stroke="#86EFAC" stroke-width="2" stroke-dasharray="8 6" />
+
+  <g transform="translate(250, 115)">
+    <circle cx="50" cy="50" r="44" fill="#DCFCE7" />
+    <!-- Box / Kit icon -->
+    <path d="M30 42 L50 30 L70 42 L70 66 L50 78 L30 66 Z" stroke="#059669" stroke-width="3" fill="#BBF7D0" />
+    <path d="M50 30 L50 78" stroke="#059669" stroke-width="2.5" />
+    <path d="M30 42 L50 54 L70 42" stroke="#059669" stroke-width="2.5" />
+  </g>
+
+  <text x="300" y="240" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#166534" text-anchor="middle">
+    [IMAGE PLACEHOLDER: Supply Kit Distribution Drive]
+  </text>
+  <text x="300" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#15803D" text-anchor="middle">
+    Shows volunteer team handing packed kits to registered schools / centers
+  </text>
+  <text x="300" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#047857" text-anchor="middle">
+    Replace file at: assets/placeholders/distribution-drive-placeholder.svg
+  </text>
+</svg>

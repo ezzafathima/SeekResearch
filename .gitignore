@@ -1,0 +1,68 @@
+# Dependencies & build output
+node_modules/
+.next/
+out/
+
+# Local environment & private Firebase Admin SDK / service account credentials
+.env
+.env.*
+*firebase-adminsdk*.json
+*service-account*.json
+serviceAccountKey.json
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+
+# Unrelated project backups
+perfume-multifile-backup/
+perfume-singlefile-backup/
+todo-backup/
+index.html.bak
+
+# Unrelated NGO website
+ngo-site/
+
+# Unrelated NGO website
+ngo-site/
+
+# Unrelated HTML projects
+aerostride.html
+aether-chrome.html
+shader-demo.html
+
+# Unrelated HTML projects
+aerostride.html
+aether-chrome.html
+shader-demo.html
+
+# Older standalone SeekResearch version
+seekresearch.html
+
+# Unrelated Next.js component demo
+app/
+
+# Unrelated component demo files
+components/
+lib/
+
+# Local Firebase emulator data
+/firebase-export-*/
+/firestore_export/
+/emulator-data/
+
+# Unrelated component demo configuration
+/components.json
+/tailwind.config.ts
+/tsconfig.json
+
+# Unrelated legacy files
+/css/perfume.css
+/css/style.css
+/css/todo.css
+/css/variables.css
+/js/app.js
+/js/config.js
+/js/perfume-*.js
+/js/todo-*.js

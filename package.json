@@ -1,0 +1,22 @@
+{
+  "name": "shader-animation-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare:hosting": "node scripts/prepare-hosting.mjs",
+    "prepare:hosting:verify": "node scripts/prepare-hosting.mjs --verify-only",
+    "emulators": "node ./node_modules/firebase-tools/lib/bin/firebase.js emulators:start --project demo-seekresearch-local --only auth,firestore,hosting",
+    "test:xss": "node ./node_modules/mocha/bin/mocha.js tests/xss-regression.test.mjs",
+    "test:rules": "node ./node_modules/firebase-tools/lib/bin/firebase.js emulators:exec --project demo-seekresearch-rules --only firestore \"node ./node_modules/mocha/bin/mocha.js tests/firestore.rules.test.mjs tests/firestore.rules.docid.test.mjs\"",
+    "test": "node ./scripts/prepare-hosting.mjs --verify-only && node ./node_modules/mocha/bin/mocha.js tests/xss-regression.test.mjs && node ./node_modules/firebase-tools/lib/bin/firebase.js emulators:exec --project demo-seekresearch-rules --only firestore \"node ./node_modules/mocha/bin/mocha.js tests/firestore.rules.test.mjs tests/firestore.rules.docid.test.mjs\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^4.0.1",
+    "@types/node": "^20.17.17",
+    "firebase": "^11.1.0",
+    "firebase-tools": "^15.35.0",
+    "mocha": "^12.0.3",
+    "playwright": "^1.65.0",
+    "typescript": "^5.7.3"
+  }
+}
