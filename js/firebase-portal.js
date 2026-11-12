@@ -216,9 +216,12 @@ function renderQuotaDisplayFromFirebase() {
 }
 
 async function hydrateSignedInWorkspace(user) {
-  state.user = user;
-  hadAuthenticatedSession = true;
   try {
+    const refreshedAuth = await refreshAuthUserState(user);
+    user = refreshedAuth.user || user;
+    state.user = user;
+    hadAuthenticatedSession = true;
+
     const [{ isAdmin }, profile, submissions, quotaCount] = await Promise.all([
       getUserClaims(user),
       getStudentProfile(user.uid),
